@@ -87,5 +87,10 @@ The tags used in the HTML document are:
 
 ---
 
+## Week 03
+
+
+### **Development steps**
+
 ## Authors
 - Araceli Fernández
