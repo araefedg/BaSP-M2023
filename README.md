@@ -85,10 +85,14 @@ The tags used in the HTML document are:
 
 20. `<button>`: This tag is used to define a button element for a form, which can be used to send message or reset in this case.
 
+21. `<footer>`: This tag is used to define a footer. It represents a container for the content that appears at the bottom of a webpage, such as copyright, contact information, or links to related pages.
+
 ---
 
 ## Week 03
-
+We started making corrections in the HTML file and reviewing the documentation and the tasks to be developed, this week it was time to implement the styles in CSS.
+It's a new structure, we begin to see the visual changes in our landing, the page that we have been working on since the first week begins to take shape.
+The weekly objective is to create a static design, understand the use of classes, properties and their attributes, also to understand the connection between files.
 
 ### **Development steps**
 

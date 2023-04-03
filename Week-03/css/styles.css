@@ -118,6 +118,7 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    right: 0;
     background-color: #373867;
     height: 116px;    
     margin-left: 243px;    
@@ -144,10 +145,12 @@ main {
     background-color: #fff;       
     margin-left: 330px;
     margin-top: 62px;
+    margin-right: 68px;
 }
 
-h1 {
-    display: inline;
+
+h1 {     
+    display: inline-block;
     position: absolute;    
     left: 330px;    
     top: 190px;
@@ -162,8 +165,8 @@ h1 span {
     font-weight: 700;
 }
 
-.main-subtitle {
-    display: inline;
+.main-subtitle {     
+    display: inline-block;
     position: absolute;
     font-size: 34px;    
     left: 330px;    
@@ -172,29 +175,326 @@ h1 span {
     font-weight: 600;
 }
 
-.main-subtitle span {    
-    font-weight: 800;
-}
-
-.main-text {
-    width: 500px;
+.main-text {     
+    width: 550px;
+    display: inline-block;
     position: relative;
     font-weight: 400;
     font-size: 25px;
-    top: 230px;
+    bottom: 380px;    
 }
 
 .main-image {
-    Width: 760px;
-    Height: auto;
+    display: inline-block;    
+    Width: 745px;
+    Height: auto;    
+    margin-left: 750px;        
+}
+
+.main-section { 
+    height: 1000px;   
+    border-bottom: 3px solid #C4C4C4;     
+}
+
+.meet-section{    
+    top: 500px;
+    height: 1000px;   
+    border-bottom: 3px solid #C4C4C4; 
+}
+
+.section-title {
+    margin-top: 90px;
+    margin-bottom: 90px;       
+    font-weight: 800;
+    font-size: 35px;    
+    color: #2F3058;
+}
+
+.meet-containers {
     display: inline-block;
-    margin-left: 750px;
-    bottom: 480px;     
+    margin-right: 200px;
+    margin-bottom: 180px;     
+}
+
+.image-circle {
+    border-radius: 100%;
+    background-color: #373867;
+    width: 170px;
+    height: 170px;
+    display: inline-block;       
+}
+
+.meet-icon {   
+    padding: 40px;
+    width: 90px;
+    height: 90px;      
+}
+
+.meet-subtitle {        
+    font-size: 25px;
+    font-weight: 600;
+    color: #373867;
+    margin-bottom: 10px;
+}
+
+.meet-text {         
+    font-size: 18px;
+    font-weight: 500;
+    color: #979797;
+}
+
+.meet-text-container {
+    width: 350px;
+    left: 25px;
+    top: 20px;
+    vertical-align: top;
     position: relative;
+    display: inline-block;
+}
+
+.contact-section {
+    top: 500px;
+    height: 1100px;   
+    border-bottom: 3px solid #C4C4C4; 
+}
+
+.label-text { 
+    display: block;   
+    font-size: 24px;
+    font-weight: 500;
+    color: #373867;
+    margin-bottom: 20px;
+}
+
+.input-form-element {
+    border: 1px solid #373867;
+    border-radius: 4px;
+    width: 492px;
+    height: 37px;
+    margin-right: 20px;
+}
+
+.input-form-element::placeholder {
+    text-indent: 10px; 
+}
+
+.label-input-element {
+    display: inline-block;
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+
+.motive-container {    
+    margin-bottom: 40px;
+}
+
+.checkbox-text-group {
+    margin-bottom: 10px;
+}
+
+.checkbox-aling {
+    vertical-align: middle;
+}
+/*
+.checkbox-aling::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-color: #F6F0E3;
+    border: 1px solid #34636E;
+  }
+  
+  .checkbox-aling:checked::before {
+    background-color: #49A37B;
+  }
+  */
+
+.paragraph-align {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 500;
+    color: #373867;
+  }
+
+.message-container {
+    margin-bottom: 40px;    
+}
+
+.text-field {
+    width: 1110px;
+    height: 200px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}  
+
+.text-field::placeholder {
+    text-indent: 10px;
+    padding-top: 10px; 
+}
+
+.button-container { 
+    text-align: right;
+    margin-right: 390px;    
+}
+
+.button-send {
+    width: 148px;
+    height: 42px;
+    background: #373867;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    margin-right: 21px;     
+}
+
+.button-reset {
+    font-size: 14px;
+    font-weight: 500;
+    width: 131px;
+    height: 42px;
+    background: #fff;
+    border-radius: 5px;
+    color: #373867;
+    border: 1px solid #373867; 
+}
+
+.about-section {
+    top: 500px;
+    height: 1100px;
+    border-bottom: 3px solid #C4C4C4; 
+}
+
+.about-text {
+    width: 1094px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 25px;
+    color: #6D6D6D;
+}
+
+.about-text span {    
+    font-weight: 600;    
+}
+
+.about-text-container-01 p{
+    margin-bottom: 25px;
+}
+
+.about-subtitle {     
+    margin-bottom: 25px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #373867;
+}
+
+.img-about-01 { 
+    text-align: left;
+    display: inline-block;     
+    Width: 271px;
+    Height: 249px;
+}
+
+.paragraph-about-01 {
+    display: inline-block;
+    text-align: left;
+    position: relative;    
+    margin-left: 30px;
+    vertical-align: top;
+}
+
+.paragraph-about-01 p {
+    width: 789px;
+}
+
+.paragraph-about-02 {    
+    text-align: left;        
+    margin-left: 305px;
+    margin-top: -155px;
+}
+
+.paragraph-about-02 p {
+    width: 385px;
+}
+
+.img-about-02-container {    
+    display: inline-block;
+    margin-left: 700px;
+    margin-top: -180px;
+}
+
+.paragraph-about-03 {
+    margin-top: -180px;
+}
+
+.paragraph-about-03 p {
+    width: 649px; 
+}
+
+.gym-section {
+    top: 500px;
+    height: 1100px;
+}
+
+.section-title-gym { 
+    margin-top: 90px;
+    margin-bottom: 90px; 
+    font-weight: 700;
+    font-size: 50px;
+    color: #373867;
+}
+
+.membership-container {
+    padding: 20px;
+    width: 467px;
+    height: 192px;
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid #49A37B;
+    filter: drop-shadow(0px 5px 8px #49A37B);
+    border-radius: 8px;
+    margin-right: 100px;
+    margin-bottom: 110px;
 }
 
 
+.membership-titles {
+    font-weight: 700;
+    font-size: 35px;
+    color: #373867;
+}
+
+.membership-items {
+    padding-top: 15px;
+    padding-left: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #373867;
+}
+
 footer {
+    height: 100px;
     background-color: #2C2C3A;       
     margin-left: 243px;
+}
+
+.footer-icons {
+    padding-top: 20px;
+    margin-left: 700px;
+}
+.footer-icons li {    
+    display: inline-block;
+    margin-right: 20px;    
+}
+
+.footer-text {
+    font-family: 'Roboto';  
+    font-weight: 400;
+    font-size: 16px;
+    color: #49A37B;
+    margin-left: 580px;
+    margin-top: 11px;
 }
