@@ -3,6 +3,10 @@
     text-decoration: none;
 }
 
+body{
+    position: relative;
+}
+
 aside {
     background-color: #373867;
     position: fixed;
@@ -14,84 +18,95 @@ aside {
     bottom: 0;
 }
 
+.aside-logo-container {       
+    position: absolute;    
+    margin-left: 26px;
+    margin-top: 34px;
+    height: 100px;
+    width: 200px;
+    text-align: center;    
+}
+
 .aside-img-logo-01 {
+    display: block;
+    margin: 0 auto 10px;
     width: 45px;
-    height: auto;
-    position: absolute;
-    left: 101px;
-    right: 97px;
-    top: 34px;
-    bottom: 2px;
+    height: auto;     
 }
 
 .aside-img-logo-02 {
+    display: block;
+    margin: 0 auto;
     width: 124px;
-    height: 32px;
-    position: absolute;
-    left: 63px;
-    right: 97px;
-    top: 83px;   
+    height: 32px;         
 }
 
-.menu-list  {
-    position: relative;
-    top: 141px;
-    left: 26px;    
+.nav-container {
+    position: absolute;    
+    left: 26px;
+    right: 26px;    
+    top: 150px;
 }
 
-.link-button {
+
+.link-button {    
     color: #C4C4C4;
     font-family: 'Roboto', sans-serif;
     font-size: 35px;
     font-weight: 700;
 }
 
-.home-menu-list {
+.link-button:hover {    
+    color: #46A37C;    
+}
+
+.home-menu-list{    
     border-bottom: 2px solid #C4C4C4;
     width: 172px;
     padding-bottom: 22px;
 }
 
-.singup-menu-list {
+.singup-menu-list, .login-menu-list {    
     border-bottom: 2px solid #C4C4C4;
     width: 172px;
     padding-bottom: 22px;
     padding-top: 22px;
 }
 
-.login-menu-list {
-    border-bottom: 2px solid #C4C4C4;
-    width: 172px;
-    padding-bottom: 22px;
+.contact-menu-list {
+    position: relative;    
     padding-top: 22px;
-}
-
-.contact-menu-list { 
-    padding-top: 22px;   
+    padding-bottom: 22px;   
 }
 
 .contact-menu-list a{ 
     color: #46A37C;   
 }
 
-.arrow-down { 
-    position: absolute;     
-    left:170px;
-    top: 280px; 
+.arrow-down {    
+    display: inline-block;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 15px;        
+     
 }
 
-.sub-menu-list {
-    position: absolute;
+.sub-menu-list {        
     top: 320px;       
     font-family: 'Roboto', sans-serif;
 }
 
-.sub-menu-text {
+.sub-menu-text {    
     display: inline-block;
     color: #46A37C;
     border-bottom: 2px solid #46A37C;
     font-size: 16px;
+    font-weight: 700;
     margin-bottom: 22px;    
+}
+
+.sub-menu-items {
+    display: inline-block;
 }
 
 .sub-menu-contact {
@@ -103,61 +118,67 @@ aside {
     margin-top: 32px;
 }
 
-.sub-menu-contact img {
+.sub-menu-contact img {    
     padding-right: 8px;
-    margin-bottom: 11px;        
+    margin-bottom: 10px;        
 }
 
-.contact-data {
-    position: relative;
-    bottom: 15px;     
+.contact-data {        
+    bottom: 20px;
+    vertical-align: top;     
 }
 
 header {
+    position: fixed;
     z-index: 1;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    right: 0;
+    right: 0;        
     background-color: #373867;
-    height: 116px;    
-    margin-left: 243px;    
+    height: 116px;
+    width: 1655px;            
 }
 
-.header-img-logo-01{
+.header-img-logo-01{     
+    display: inline;
+    position: absolute;
     width: 70px;
-    height: auto;
-    position: absolute;
-    left: 66px;
+    height: auto;    
+    left: 100px;
     right: 8px;
-    top: 22px;    
+    top: 22px;
+        
 }
 
-.header-img-logo-02 {
-    width: 230px;
-    height: auto;
+.header-img-logo-02 {    
+    display: inline;
     position: absolute;
-    left: 142px;    
-    top: 32px;      
-}
-
-main {
-    background-color: #fff;       
-    margin-left: 330px;
-    margin-top: 62px;
-    margin-right: 68px;
+    width: 230px;
+    height: auto;    
+    top: 32px;
+    left: 180px;          
 }
 
 
-h1 {     
-    display: inline-block;
+main{    
+    position: absolute;
+    width: 1655px;
+    right: 0;    
+    text-align: right;
+}
+
+.main-info {
+    top: 100px;
     position: absolute;    
-    left: 330px;    
-    top: 190px;
+    width: 759px;
+    text-align: left;
+}
+
+
+h1 { 
+    padding-top: 100px;    
+    display: inline-block;    
     font-weight: 800;
     font-size: 80px;
     color: #2F3058;    
-    padding-bottom: 22px;
 }
 
 h1 span {
@@ -165,34 +186,48 @@ h1 span {
     font-weight: 700;
 }
 
-.main-subtitle {     
-    display: inline-block;
-    position: absolute;
+.main-subtitle {
+    padding-top: 60px;     
+    display: inline-block;    
     font-size: 34px;    
-    left: 330px;    
-    top: 320px;
     color: #2F3058;
     font-weight: 600;
 }
 
-.main-text {     
+.main-text { 
+    padding-top: 60px;    
     width: 550px;
-    display: inline-block;
-    position: relative;
-    font-weight: 400;
-    font-size: 25px;
-    bottom: 380px;    
-}
-
-.main-image {
     display: inline-block;    
-    Width: 745px;
-    Height: auto;    
-    margin-left: 750px;        
+    font-weight: 400;
+    font-size: 24px;             
 }
 
-.main-section { 
-    height: 1000px;   
+.main-text-01 {        
+    width: 550px;
+    display: inline-block;    
+    font-weight: 400;
+    font-size: 24px;
+    text-indent: 40px; 
+}
+
+
+.main-image {    
+    text-align: right;
+    display: inline-block;
+    margin-top: 110px;        
+    Width: 759px;           
+}
+
+.main-image img {    
+    text-align: right;    
+    padding-top: 100px;        
+    Width: 759px;           
+}
+
+.main-section {
+    margin-left: 68px;
+    margin-right: 68px;    
+    height: 1080px;   
     border-bottom: 3px solid #C4C4C4;     
 }
 
@@ -247,8 +282,7 @@ h1 span {
     width: 350px;
     left: 25px;
     top: 20px;
-    vertical-align: top;
-    position: relative;
+    vertical-align: top;    
     display: inline-block;
 }
 
@@ -295,21 +329,7 @@ h1 span {
 .checkbox-aling {
     vertical-align: middle;
 }
-/*
-.checkbox-aling::before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    background-color: #F6F0E3;
-    border: 1px solid #34636E;
-  }
-  
-  .checkbox-aling:checked::before {
-    background-color: #49A37B;
-  }
-  */
+
 
 .paragraph-align {
     display: inline-block;
@@ -400,8 +420,7 @@ h1 span {
 
 .paragraph-about-01 {
     display: inline-block;
-    text-align: left;
-    position: relative;    
+    text-align: left;       
     margin-left: 30px;
     vertical-align: top;
 }
@@ -476,6 +495,7 @@ h1 span {
 }
 
 footer {
+    position: relative;
     height: 100px;
     background-color: #2C2C3A;       
     margin-left: 243px;

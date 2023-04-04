@@ -11,53 +11,77 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"/>
   </head>
-  <body>   
-
-    <aside>
-        <img class="aside-img-logo-01" src="../assets/images/img-logo-01.svg" alt="logo" />
-        <img class="aside-img-logo-02" src="../assets/images/img-logo-02.svg" alt="logo" />
-        <nav>
-        <ul class="menu-list">
-            <li class="home-menu-list"><a class="link-button" href="#">Home</a></li>
-            <li class="singup-menu-list"><a class="link-button" href="#">Sing Up</a></li>
-            <li class="login-menu-list"><a class="link-button" href="#">Login</a></li>
-            <li class="contact-menu-list"><a class="link-button" href="#">Contact<img class="arrow-down" src="../assets/images/arrow-down-icon.png" alt="arrow-down-icon"></a>
-            <ul class="sub-menu-list">
-                <li class="sub-menu-text">Get in touch</li>
-                <li class="sub-menu-contact"><img src="../assets/images/mail-icon.svg" alt="mail-icon" /><span class="contact-data">RocketSA@gmail.com</span></li>
-                <li class="sub-menu-contact"><img src="../assets/images/phone-icon.svg" alt="phone-icon"/><span class="contact-data">(000) 000-000000</span></li>
-                <li class="sub-menu-contact"><img src="../assets/images/adress-icon.svg" alt="adress-icon"/><span class="contact-data">Somewhere -Zeballos 1410</span></li>
+  <body> 
+      
+      <aside>
+        <div class="aside-logo-container">
+          <img class="aside-img-logo-01" src="../assets/images/img-logo-01.svg" alt="logo" />
+          <img class="aside-img-logo-02" src="../assets/images/img-logo-02.svg" alt="logo" />
+        </div>
+        <div class="nav-container">
+          <nav>
+            <ul>
+                <li class="home-menu-list"><a class="link-button" href="#">Home</a></li>
+                <li class="singup-menu-list"><a class="link-button" href="#">Sing Up</a></li>
+                <li class="login-menu-list"><a class="link-button" href="#">Login</a></li>
+                <div>
+                  <li class="contact-menu-list"><a class="link-button" href="#">Contact
+                    <img class="arrow-down" src="../assets/images/arrow-down-icon.png" alt="arrow-down-icon"></a>
+                </div>              
+                <ul class="sub-menu-list">
+                  <div class="sub-menu-text">
+                    <li>Get in touch</li>
+                  </div>
+                  <div class="sub-menu-items">
+                    <li class="sub-menu-contact"><img src="../assets/images/mail-icon.svg" alt="mail-icon" /><span class="contact-data">RocketSA@gmail.com</span></li>
+                    <li class="sub-menu-contact"><img src="../assets/images/phone-icon.svg" alt="phone-icon"/><span class="contact-data">(000) 000-000000</span></li>
+                    <li class="sub-menu-contact"><img src="../assets/images/adress-icon.svg" alt="adress-icon"/><span class="contact-data">Somewhere -Zeballos 1410</span></li>
+                  </div>                    
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
-    <header>
-        <img class="header-img-logo-01" src="../assets/images/img-logo-01.svg" alt="logo"/>
-        <img class="header-img-logo-02" src="../assets/images/img-logo-02.svg" alt="logo"/>
-    </header>
+          </nav>
+        </div>       
+      </aside>  
+      <header>        
+          <img class="header-img-logo-01" src="../assets/images/img-logo-01.svg" alt="logo"/>
+          <img class="header-img-logo-02" src="../assets/images/img-logo-02.svg" alt="logo"/>
+      </header>
+    
+    
+    
 
     <main>
       <section class="main-section">
-        <img class="main-image" src="../assets/images/img-main.jpg" alt="main-img"/>
-        <h1><span>Mega</span>Rocket GYM</h1>
+        <div class="main-info">
+          <h1><span>Mega</span>Rocket GYM</h1>
         <h2 class="main-subtitle">Launch your fitness journey with <span>MegaRocket</span></h2>        
         <p class="main-text">
           Welcome to Megarocket SA, where we believe in creating a holistic
           approach to fitness. Our gym is a state-of-the-art facility that caters
           to all your fitness needs. Whether you're looking to build muscle,
           increase flexibility, or simply stay healthy, we have everything you
-          need to reach your goals. Our gym is equipped with the latest fitness
-          equipment, including cardio machines, weightlifting equipment, and
-          functional training areas. We also offer personalized training programs
-          tailored to your specific fitness goals, whether you're a beginner or a
-          seasoned athlete. At Megarocket SA, we believe that fitness is a
-          lifestyle, not just a hobby. Join us today and start your journey
-          towards a healthier, happier you.
+          need to reach your goals.
+        <p class="main-text-01">
+          Our gym is equipped with the latest fitness equipment, including cardio
+          machines, weightlifting equipment, and functional training areas. 
+          We also offer personalized training programs tailored to your specific 
+          fitness goals, whether you're a beginner or a seasoned athlete.
+        </p>  
+        <p class="main-text-01">
+          At Megarocket SA, we believe that fitness is a lifestyle, not just a hobby.
+          Join us today and start your journey towards a healthier, happier you.
         </p>        
-      </section>      
-             
+        </p>
+        </div> 
+        <div class="main-image">
+          <img src="../assets/images/img-main.jpg" alt="main-img"/>
+        </div>                       
+      </section>  
+      
+      
+
+
       <section class="meet-section">
         <h2 class="section-title">Meet us</h2>
         <article class="meet-containers">
