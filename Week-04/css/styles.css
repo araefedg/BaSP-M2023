@@ -1,0 +1,58 @@
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.main-subtitles {    
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px; 
+    color: #2F3058;
+}
+
+.main-subtitles span {
+    font-weight: 800;
+}
+
+.paragraphs {    
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #7f7f7f;
+}
+
+.meet-subtitles {    
+    font-size: 16px;
+    font-weight: 600;
+    color: #373867;
+}
+
+.meet-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #979797;
+}
+
+.contact-label, .checkbox-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #373867;
+}
+
+.about-subtitles {
+    font-size: 15px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.gym-subtitles {
+    font-size: 16px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.activity-list {
+    font-size: 13px;
+    font-weight: 500;
+    color: #373867;
+}

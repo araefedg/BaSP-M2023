@@ -1,0 +1,42 @@
+main {           
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    min-width: 390px; 
+    margin: 0 auto;    
+}
+
+.main-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 262px;
+    min-height: 45px;  
+    
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: #2F3058;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+h1 span {
+    font-weight: 700;
+    color: #626380;
+}
+
+.main-image{
+    margin: 40px;
+    width: 80%;
+    height: auto;
+}
+
+
+
+
+
