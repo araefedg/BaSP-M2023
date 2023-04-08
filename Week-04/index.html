@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="../Week-04/css/footer.css" />    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0
-    ,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&
-    display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;
+0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+rel="stylesheet">
 </head>
 <body>
     
@@ -49,92 +51,120 @@
         <section class="principal-section-container">            
             <h1 class="main-title"><span>Mega</span>Rocket GYM</h1>
             <img class="main-image" src="../assets/images/img-main.jpg" alt="main-img">
-            <h2 class="main-subtitles">Launch your fitness journey with <span>MegaRocket</span></h2>
-            <p class="paragraphs">Welcome to Megarocket SA, where we believe in creating a holistic approach to fitness.
-             Our gym is a state-of-the-art facility that caters to all your fitness needs.
-             Whether you're looking to build muscle, increase flexibility, or simply stay healthy,
-             we have everything you need to reach your goals.</p>
-            <p class="paragraphs">Our gym is equipped with the latest fitness equipment, including cardio machines,
-             weightlifting equipment, and functional training areas.
-             We also offer personalized training programs tailored to your specific fitness goals,
-             whether you're a beginner or a seasoned athlete.</p>
-            <p class="paragraphs">At Megarocket SA, we believe that fitness is a lifestyle, not just a hobby.
-             Join us today and start your journey towards a healthier, happier you.</p>        
-        </section>
-        
-    
-    
-    <section>
+            <div class="main-subtitle-container">
+                <h2 class="main-subtitle-principal">Launch your fitness journey with <span>MegaRocket</span></h2>
+            </div>
+            <div class="p-container">
+                <p class="paragraphs">Welcome to Megarocket SA, where we believe in creating a holistic approach to fitness.
+                    Our gym is a state-of-the-art facility that caters to all your fitness needs.
+                    Whether you're looking to build muscle, increase flexibility, or simply stay healthy,
+                    we have everything you need to reach your goals.</p>
+                   <p class="paragraphs-01">Our gym is equipped with the latest fitness equipment, including cardio machines,
+                    weightlifting equipment, and functional training areas.
+                    We also offer personalized training programs tailored to your specific fitness goals,
+                    whether you're a beginner or a seasoned athlete.</p>
+                   <p class="paragraphs-01">At Megarocket SA, we believe that fitness is a lifestyle, not just a hobby.
+                    Join us today and start your journey towards a healthier, happier you.</p>
+            </div>                  
+        </section>    
+    <section class="border-section">
         <h2 class="main-subtitles">Meet us</h2>
-        <img src="../assets/images/appointment-icon.png" alt="appointment-icon">
+        <div class="meet-block">
+            <img src="../assets/images/appointment-icon.png" alt="appointment-icon">
         <article>            
             <h3 class="meet-subtitles">Book an appointment</h3>
             <p class="meet-text">Book your turn for a visit, come and meet us!</p>
         </article>
-        <img src="../assets/images/schedule-icon.svg" alt="schedule-icon">
+        </div>
+        <div class="meet-block">
+            <img src="../assets/images/schedule-icon.png" alt="schedule-icon">
         <article>            
             <h3 class="meet-subtitles">Attention schedule</h3>
             <p class="meet-text">You will find all our schedules, adapted to your needs.</p>
         </article>
-        <img src="../assets/images/members-icon.svg" alt="members-icon">
+        </div>        
+        <div class="meet-block">
+            <img src="../assets/images/members-icon.png" alt="members-icon">
         <article>            
             <h3 class="meet-subtitles">Membership management</h3>
             <p class="meet-text">Here you can manage your membership, we have a variety of them, take a look in the 
                GYM section below.</p>
         </article>
-        <img src="../assets/images/contact-icon.svg" alt="contact-icon">
+        </div>        
+        <div class="meet-block">
+            <img src="../assets/images/contact-icon.png" alt="contact-icon">
         <article>            
             <h3 class="meet-subtitles">Contact form & suggestions</h3>
             <p class="meet-text">Write to us, our team will always be willing to listen to you!</p>
         </article>
+        </div>        
     </section>
     
-    <section>
+    <section class="border-section">
         <h2 class="main-subtitles">Contact us</h2>
-        <form>
+        <form class="form-container">
             <label class="contact-label">Name</label>
-            <input type="name" placeholder="Name">
+            <input class="input-form" type="name" placeholder="Name">
             <label class="contact-label">Last Name</label>
-            <input type="name" placeholder="Last Name">
+            <input class="input-form" type="name" placeholder="Last Name">
             <label class="contact-label">Email</label>
-            <input type="name" placeholder="Email">
+            <input class="input-form" type="name" placeholder="Email">
             <label class="contact-label">Motive</label>
-            <input type="checkbox">
-            <p class="checkbox-text">I want to know about memberships and costs.</p>
-            <input type="checkbox">
-            <p class="checkbox-text">I want to make a question or a suggestion.</p>
-            <input type="checkbox">
-            <p class="checkbox-text">I want to make a claim.</p>
+            <div class="checkbox-container">
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <p class="checkbox-text">I want to know about memberships and costs.</p>
+                </div>               
+                <div class="checkbox-item">
+                    <input type="checkbox">                
+                    <p class="checkbox-text">I want to make a question or a suggestion.</p>
+                </div>                
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                <p class="checkbox-text">I want to make a claim.</p>
+                </div>                
+            </div>            
             <label class="contact-label">Message</label>
-            <textarea cols="30" rows="10" placeholder="Message"></textarea>
-            <button>SEND MESSAGE</button>
-            <button>RESET</button>
+            <textarea  placeholder="Message"></textarea>
+            <div class="button-container">
+                <button class="button-send">SEND MESSAGE</button>
+                <button class="button-reset">RESET</button>
+            </div>            
         </form>
     </section>
     
-    <section>
+    <section class="border-section">
         <h2 class="main-subtitles">About us</h2>
-        <p class="paragraphs">Megarocket SA gym was founded in 1995 by a former Olympic athlete named Max Strong.
-           Max had always been passionate about fitness and wanted to create a gym that would 
-           provide people with a welcoming and inclusive environment to pursue their fitness 
-           goals.</p>
-        <p class="paragraphs">Over the years, Megarocket SA grew into one of the most popular gyms in the city,
-           with a thriving community of members who were passionate about fitness. Max continued
-           to run the gym until he retired in 2020. </p>
+        <div class="about-p">
+            <p class="paragraphs"><span>Megarocket SA</span> gym was founded in 1995 by a former Olympic athlete named Max Strong.
+                Max had always been passionate about fitness and wanted to create a gym that would 
+                provide people with a welcoming and inclusive environment to pursue their fitness 
+                goals.</p>
+             <p class="paragraphs">Over the years, <span>Megarocket SA</span> grew into one of the most popular gyms in the city,
+                with a thriving community of members who were passionate about fitness. Max continued
+                to run the gym until he retired in 2020. </p>
+        </div>        
         <h3 class="about-subtitles">Our thoughts</h3>
-        <img src="../assets/images/img-about-01.jpg" alt="img-about-01">
-        <p class="paragraphs">At Megarocket SA, we believe that fitness is not just a hobby, it's a lifelong journey.
-           Our expert trainers are committed to helping you achieve your goals.
-           We believe that fitness is not a one-size-fits-all solution. That's why we offer a wide
-           range of classes and services to cater to every individual's unique needs and
-           preferences.</p>
+        <div class="about-p-1">
+            <div class="image-about-1">
+                <img src="../assets/images/img-about-01.jpg" alt="img-about-01">
+            </div>
+            <div class="about-text-1">
+                <p class="paragraphs">At <span>Megarocket SA</span>, we believe that fitness is not just a hobby, it's a lifelong journey.
+                    Our expert trainers are committed to helping you achieve your goals.</p>                    
+            </div>            
+            <p class="paragraphs"> We believe that fitness is not a one-size-fits-all solution. That's why we offer a wide
+                range of classes and services to cater to every individual's unique needs and
+                references.</p> 
+        
+               
         <h3 class="about-subtitles">We are a family</h3>
-        <p class="paragraphs">We're not just a gym - we're a family. At Megarocket SA, you'll find a supportive and 
+        <p class="paragraphs">We're not just a gym - we're a family. At <span>Megarocket SA</span>, you'll find a supportive and 
            welcoming community that will keep you motivated  and inspired to reach your goals.</p>
         <img src="../assets/images/img-about-02.png" alt="img-about-01">        
     </section>
     
-    <section>
+    <section class="border-section">
         <h2 class="main-subtitles">GYM Section</h2>
         <article>
             <h3 class="gym-subtitles">Activities</h3>
