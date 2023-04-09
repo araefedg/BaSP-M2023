@@ -1,12 +1,14 @@
 html {
+    width: 100%;
     font-size: 16px;
+    text-decoration: none;
   }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     margin: 0 auto;
-    max-width: 768px;
-    font-size: 1rem;
+    max-width: 601px;
+    overflow-x: hidden;    
 }
 
 .main-subtitles {    
@@ -59,6 +61,7 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: #373867;
+    padding-bottom: 7px;
 }
 
 .checkbox-text {
@@ -67,25 +70,28 @@ body {
     color: #373867;
 }
 
-.contact-label {
-    padding-bottom: 7px;
-}
-
 .about-subtitles {
     font-size: 15px;
     font-weight: 700;
     color: #373867;    
 }
 
-.gym-subtitles {
+.about-subtitles:nth-of-type(1) {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.gym-subtitles {    
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 800;
     color: #373867;
 }
 
 .activity-list {
-    font-size: 13px;
-    font-weight: 500;
+    padding-left: 7%;
+    padding-top: 2%;
+    font-size: 0.813em;
+    font-weight: 550;
     color: #373867;
 }
 
@@ -121,4 +127,72 @@ body {
     flex-direction: row;
     align-items: center;
     padding-bottom: 13px;
+}
+
+.activity-container {
+    box-sizing: border-box;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    border: 1px solid #49A37B;
+    border-radius: 8px;
+    width: 100%;
+}
+
+
+@media (min-width: 601px) {    
+
+    .paragraphs {    
+        font-size: 1em;        
+    }
+
+    .paragraphs-01 {
+        font-size: 1em;        
+        text-indent: 30px;
+    }
+
+    .meet-subtitles {    
+        font-size: 1.5em;        
+    }
+
+    .meet-text {
+        font-size: 1em;        
+    }
+
+    .contact-label {
+        font-size: 1em;       
+    }
+
+    .checkbox-text {
+        font-size: 1em;        
+    }
+
+    .main-subtitles {    
+        font-size: 2em;        
+        margin-top: 100px;
+        margin-bottom: 80px;         
+    }
+
+    .about-subtitles {
+        font-size: 1.2em;           
+    }
+
+    .gym-subtitles {    
+        font-size: 1.5em;
+        font-weight: 800;
+        color: #373867;
+    }
+
+    .activity-list {        
+        font-size: 1em;
+       
+    }
+
+   
+}
+
+@media (min-width: 1024px) {
+   
+    body {
+        min-width: 1024px;
+    }
 }
