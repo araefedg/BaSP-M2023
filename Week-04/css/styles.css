@@ -5,10 +5,8 @@ html {
   }
 
 body {
-    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-    margin: 0 auto;
-    max-width: 601px;
-    overflow-x: hidden;    
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;    
+    overflow-x: hidden;   
 }
 
 .main-subtitles {    
@@ -191,8 +189,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+
+    .meet-subtitles {    
+        font-size: 16px;
+        font-weight: 700;       
+    }   
    
-    body {
-        min-width: 1024px;
-    }
 }

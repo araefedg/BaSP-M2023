@@ -1,10 +1,19 @@
+
+/*Global*/
 main {           
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;             
+    justify-content: center;                 
+}
+
+/*Main section*/
+
+main section.border-section-00 {
+    display: flex;
+    align-self: center;
+    flex-direction: column;    
+    width: 80%;    
 }
 
 .main-title{
@@ -64,6 +73,8 @@ h1 span {
     flex-wrap: wrap;   
 }
 
+/*Meet Us section*/
+
 article {
     width: 60%; 
     display: flex;
@@ -90,6 +101,7 @@ article h3 {
     flex: 2;
 }
 
+/*Contact Us section*/
 
 .form-container {
     width: 100%; 
@@ -160,10 +172,11 @@ textarea::placeholder {
     color: #FFFFFF;
 }
 
+/*About Us section*/
+
 .about-p p {
     margin-bottom: 25px;
 }
-
 
 .about-p-1 {
  display: flex;
@@ -181,7 +194,6 @@ textarea::placeholder {
     height: auto;
 }
 
-
 .about-text-1 {
     flex: 1 1 ;
 }
@@ -195,10 +207,10 @@ textarea::placeholder {
     border-radius: 8px;
 }
 
+/*Tablet styles media query*/
 
-
-@media (min-width: 601px) {
-    /* Estilos para tablet */
+@media (min-width: 600px) {
+    
 
     h1 {
         font-size: 2.5em;        
@@ -211,17 +223,18 @@ textarea::placeholder {
     }
 
     .main-image{       
-        width: 70%;
-        height: 357px;        
+        min-width: 300px;
+        min-height: 100px;       
     }
+   
 
     .main-subtitle-container {        
         margin-bottom: 40px;
-        width: calc(110px + 50vw);
+        min-width: none;
     }
 
     .main-subtitle-principal {    
-        margin-left: 28%; 
+        margin-left: 100px; 
         font-size: 1.563em;        
     }
 
@@ -256,6 +269,91 @@ textarea::placeholder {
     
   }
 
+  /*Desktop styles media query*/
+
+  @media (min-width: 1024px) {
+    
+    main {           
+        margin-left: 243px;             
+    }
+
+    .main-title{
+        margin-left: 50px;
+        display: flex;
+        justify-content: flex-start;        
+        min-width: 30px;
+        min-height: 19px;   
+    }
+    
+    h1 {       
+        margin-bottom: 1%;
+    }    
+
+    .main-section-block {
+        background-color: dimgrey;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;        
+        max-width: 1200px;        
+    }
+
+    .main-subtitle-container {
+        display: flex;
+        justify-content: flex-start;        
+        width: 100%;
+    }  
+    
+    .main-subtitle-principal {    
+        margin-left: 0%; 
+        font-size: 1.1em;        
+    }    
+
+    .p-container {
+        margin-left: 0%;
+        min-width: 320px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .main-image{
+        display: none;
+        padding-right: 150px;
+        margin-left: 1px;
+        margin-bottom: 1px;
+        min-width: 472px;
+        height: auto;
+        border-radius: 22px;
+    }
+
+    .main-text-container {
+        padding-left: 50px;
+        display: flex;
+        flex-direction: column;
+        min-width: 100px;               
+    }
+/*aca empieza meet us*/
+     
+
+
+.meet-block {    
+    margin-left: 0;
+    width: 50%;
+    margin-bottom: 50px;    
+}
+
+.meet-block img {
+    min-width: 100px;   
+}
+
+.meet-block-group {
+    min-height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}   
+  }
 
 
 
