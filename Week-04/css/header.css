@@ -34,7 +34,6 @@ header {
     width: auto;     
 }
 
-
 @media (min-width: 600px) {    
 
     .logo {
@@ -70,8 +69,7 @@ header {
         padding-top: 10px;    
         height: 42px;
         width: auto;     
-    }
-       
+    }       
 }
 
 

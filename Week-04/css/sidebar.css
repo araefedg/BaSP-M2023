@@ -96,8 +96,7 @@ aside {
     .arrow-down { 
         width: 15px;
         margin-left: 30px;
-        margin-bottom: 13px;
-                     
+        margin-bottom: 13px;                     
     }  
     
     .sub-menu-text {         
@@ -106,12 +105,12 @@ aside {
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 22px; 
-        margin-left: -60px;   
+        margin-left: 30px;   
     }
     
     .sub-menu-items {
-        width: 100%;
-        margin-left: 50px;        
+        width: 99%;
+        margin-left: 23px;        
         display: flex;
         flex-direction: column;
         justify-content: center;

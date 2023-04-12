@@ -127,12 +127,22 @@
             <section class="border-section">
                 <h2 class="main-subtitles">Contact us</h2>
                 <form class="form-container">
-                    <label class="contact-label">Name</label>
-                    <input class="input-form" type="name" placeholder="Name">
-                    <label class="contact-label">Last Name</label>
-                    <input class="input-form" type="name" placeholder="Last Name">
-                    <label class="contact-label">Email</label>
-                    <input class="input-form" type="name" placeholder="Email">
+                    <div class="label-container-01">
+                        <div class="label-input-container">
+                            <label class="contact-label">Name</label>
+                            <input class="input-form" type="name" placeholder="Name">
+                        </div>
+                        <div class="label-input-container">
+                            <label class="contact-label">Last Name</label>
+                            <input class="input-form" type="name" placeholder="Last Name">
+                        </div>                       
+                    </div>
+                    <div class="label-container-02">
+                        <div class="label-input-container">
+                            <label class="contact-label">Email</label>
+                            <input class="input-form" type="email" placeholder="Email">
+                        </div>                        
+                    </div>                    
                     <label class="contact-label">Motive</label>
                     <div class="checkbox-container">
                     <div class="checkbox-item">
@@ -178,39 +188,47 @@
                             just a hobby, it's a lifelong journey. Our expert trainers are committed to 
                             helping you achieve your goals.</p>
                     </div>
-                    <p class="paragraphs"> We believe that fitness is not a one-size-fits-all solution. 
-                        That's why we offer a wide range of classes and services to cater to every individual's 
-                        unique needs and references.</p>
-                    <h3 class="about-subtitles">We are a family</h3>
-                    <div class="about-text-2">
-                        <p class="paragraphs">We're not just a gym - we're a family. At <span>Megarocket SA</span>
-                            , you'll find a supportive and welcoming community that will keep you motivated 
-                            and inspired to reach your goals.</p>
-                        <img src="../assets/images/img-about-02.png" alt="img-about-01">
+                    <div class="middle-p">                        
+                        <p class="paragraphs"> We believe that fitness is not a one-size-fits-all solution. 
+                            That's why we offer a wide range of classes and services to cater to every individual's 
+                            unique needs and references.</p>
+                    </div>
+                    <div>
+                        <h3 class="about-subtitles">We are a family</h3>
+                        <div class="about-text-2">
+                            <p class="paragraphs">We're not just a gym - we're a family. At <span>Megarocket SA</span>
+                                , you'll find a supportive and welcoming community that will keep you motivated 
+                                and inspired to reach your goals.</p>
+                            <img src="../assets/images/img-about-02.png" alt="img-about-01">
+                    </div>                    
                     </div>
                 </div>
             </section>
 
             <section class="border-section">
                 <h2 class="main-subtitles">GYM Section</h2>
-                <article class="activity-container">
-                    <h3 class="gym-subtitles">Activities</h3>
-                    <ol class="activity-list">
-                        <li>Crossfit</li>
-                        <li>Functional</li>
-                        <li>Box</li>
-                        <li>Musculation</li>
-                    </ol>
-                </article>
-                <article class="activity-container">
-                    <h3 class="gym-subtitles">Black Membership</h3>
-                    <ol class="activity-list">
-                        <li>Free access to musculation room.</li>
-                     <li>Free access to classes with pre-inscription.</li>
-                        <li>Personalized folow up with a trainer.</li>
-                        <li>Grid visualization.</li>
-                     </ol>
-                </article>
+
+                <div class="activity-block"> 
+                    <article class="activity-container">
+                        <h3 class="gym-subtitles">Activities</h3>
+                        <ol class="activity-list">
+                            <li>Crossfit</li>
+                            <li>Functional</li>
+                            <li>Box</li>
+                            <li>Musculation</li>
+                        </ol>
+                    </article>
+                    <article class="activity-container">
+                        <h3 class="gym-subtitles">Black Membership</h3>
+                        <ol class="activity-list">
+                            <li>Free access to musculation room.</li>
+                         <li>Free access to classes with pre-inscription.</li>
+                            <li>Personalized folow up with a trainer.</li>
+                            <li>Grid visualization.</li>
+                         </ol>
+                    </article>
+                </div>
+                <div class="activity-block">
                 <article class="activity-container">
                     <h3 class="gym-subtitles">Classic Membership</h3>
                     <ol class="activity-list">
@@ -227,6 +245,7 @@
                         <li>Dance fitness</li>
                     </ol>
                 </article>
+                </div>
             </section>
         </main>
 
