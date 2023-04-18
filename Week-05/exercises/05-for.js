@@ -32,9 +32,9 @@ console.log('-Exercise 5.c:');
 var sentence = "";
 
 for (var i = 0; i < frutas.length; i++) {
-    sentence += frutas[i] + " ";
-    alert(sentence);
+    sentence += frutas[i] + " ";    
 }
+alert(sentence);
 
 
 //d. Crear un array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número
