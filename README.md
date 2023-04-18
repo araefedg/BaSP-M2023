@@ -147,6 +147,16 @@ From here you can access the finished project:
 
 URL: <https://araefe1992.github.io/BaSP-M2023/Week-04/index.html>
 
+---
+
+## Week 5
+
+The challenge this week is to introduce us to Javascript, to understand what is a variable, an argument, the different types of data that can be used, the mathematical and unary operators, what are functions and iteration cycles.
+The goal is to solve, using the ES5 implementation, basic exercises on operators and variables in JavaScript, strings, arrays and for cycles, as well as to see functions.
+
+
+URL: <https://araefe1992.github.io/BaSP-M2023/Week-05/index.html>
+
 ## Authors
 
 - Araceli Fernández

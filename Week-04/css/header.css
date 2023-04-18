@@ -1,76 +1,57 @@
-header {          
-    width: 100%;
-    height: 84px;           
-    background-color: #373867;
+header {
+  width: 100%;
+  height: 84px;
+  background-color: #373867;
 }
 
 .image-menu-icon {
-    display: flex;
-    width: 16px;
-    height: 14px;
-    padding-top: 10px;
-    padding-left: 10px;    
-    align-self: flex-start;
-    flex-direction: column;    
+  display: flex;
+  width: 16px;
+  height: 14px;
+  padding-top: 10px;
+  padding-left: 10px;
+  flex-direction: column;
 }
 
 .logo {
-    display: flex;
-    align-items: center;    
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-logo-01 {
-    width: 44px;
-    height: 46px;
-    margin-right: 8px;
-    display: flex;
-    align-self: flex-start;     
+  width: 44px;
+  height: 46px;
+  margin-right: 8px;
+  display: flex;
+  align-self: flex-start;
 }
 
 .image-logo-02 {
-    padding-top: 10px;    
-    height: 42px;
-    width: auto;     
+  padding-top: 10px;
+  height: 42px;
+  width: auto;
 }
 
-@media (min-width: 600px) {    
-
-    .logo {
-        justify-content: flex-start;
-        margin-left: 50px;
-    }    
+@media (min-width: 600px) {
+  .logo {
+    justify-content: flex-start;
+    margin-left: 50px;
+  }
 }
 
-@media (min-width: 1024px) { 
-    
+@media (min-width: 1024px) {
+  .image-menu-icon {
+    padding-left: 20%;
+  }
 
-    .image-menu-icon {        
-        padding-left: 250px;    
-           
-    }
-    
-    .logo {
-        display: flex;
-        align-items: center;    
-        justify-content: flex-start;
-    }
-    
-    .image-logo-01 {
-        width: 44px;
-        height: 46px;
-        margin-left: 250px;
-        margin-right: 8px;
-        display: flex;
-        align-self: flex-start;     
-    }
-    
-    .image-logo-02 {
-        padding-top: 10px;    
-        height: 42px;
-        width: auto;     
-    }       
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .image-logo-01 {    
+    margin-left: 20%;    
+  }  
 }
-
-
-  
