@@ -135,12 +135,7 @@ aside {
     margin-bottom: 5px;
   }
 
-  .contact-data {
-    display: flex;
+  .contact-data {    
     vertical-align: top;
-  }
-
-  .contact-data:first-child {
-    color: red;
-  }
+  }  
 }
