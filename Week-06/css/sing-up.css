@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/images/background-login.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+.header {
+  width: 100%;
+  height: 84px;
+  background-color: #373867;
+}
+
+header a img {
+  position: absolute;
+  margin-left: 85%;
+  margin-top: -45px;
+  width: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+  margin-left: 20px;
+  max-width: 30%;
+}
+
+.image-logo-01 {
+  width: 44px;
+  height: 46px;
+  margin-right: 8px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.image-logo-02 {
+  padding-top: 10px;
+  height: 42px;
+  width: auto;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 7vh 0;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 5vh 0;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-container {
+  background-color: rgb(142, 150, 156, 0.7);
+  width: 80%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.form-element {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60vw;
+  margin-bottom: 20px;
+}
+
+.form-element input {
+  width: 60vw;
+  height: 40px;
+}
+.form-element img {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-right: 18%;
+}
+
+.btn {
+  background-color: #cc9d42;
+  border: none;
+  color: #ffffff;
+  width: 250px;
+  height: 40px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  header a img {    
+    margin-left: 90%;    
+  }
+}
+
+@media (min-width: 1024px) {
+
+  header a img {
+    margin-left: 95%;    
+  }  
+
+form {
+  margin-left: 10%;  
+}
+  
+.form-container {
+  background-color: rgb(142, 150, 156, 0.7);
+  width: 80%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.form-element {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+  margin-bottom: 20px;
+}
+
+.form-element input {
+  width: 20vw;
+  height: 40px;
+}
+
+.form-element input.email {
+  width: 50vw;
+  
+}
+
+.form-element img {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+}
+
+.name-lastname-container,
+.dni-bday-container, 
+.phone-adress-container,
+.place-post-container,
+.password-container {
+  display: flex;
+  flex-direction: row;
+}
+
+}

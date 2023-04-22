@@ -1,0 +1,141 @@
+aside {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #373867;
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    flex-basis: 15%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .aside-logo-container {
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 150px;
+  }
+
+  .aside-img-logo-01 {
+    display: block;
+    height: auto;
+    width: 45px;
+    margin: 0 auto 10px;
+  }
+
+  .aside-img-logo-02 {
+    display: block;
+    margin: 0 auto;
+    width: 124px;
+    height: 32px;
+  }
+
+  .nav-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .link-button {
+    text-decoration: none;
+    color: #c4c4c4;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+  .link-button:hover {
+    color: #46a37c;
+  }
+
+  .home-menu-list {
+    border-bottom: 2px solid #c4c4c4;
+    padding-bottom: 22px;
+    width: 90%;
+  }
+
+  .singup-menu-list,
+  .login-menu-list {
+    border-bottom: 2px solid #c4c4c4;
+    padding-bottom: 22px;
+    padding-top: 22px;
+    width: 90%;
+  }
+
+  .contact-menu-list {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .contact-menu-list a {
+    color: #46a37c;
+  }
+
+  .arrow-down {
+    width: 15px;
+    margin-left: 30px;
+    margin-bottom: 13px;
+  }
+
+  .sub-menu-text p {
+    color: #46a37c;
+    border-bottom: 2px solid #46a37c;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 22px;
+  }
+
+  .sub-menu-items {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+  }
+
+  .sub-menu-contact {
+    color: #c4c4c4;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 2px solid #c4c4c4;
+    padding-bottom: 2px;
+    margin-top: 32px;
+    flex-direction: row;
+    display: flex;
+  }
+
+  .sub-menu-contact img {
+    width: auto;
+    padding-right: 8px;
+    margin-bottom: 5px;
+  }
+
+  .contact-data {    
+    vertical-align: top;
+  }  
+}
