@@ -16,10 +16,10 @@ body {
 }
 
 header a img {
-    position: absolute;   
-    margin-left: 85%;
-    margin-top: -45px;
-    width: 40px;
+  position: absolute;
+  margin-left: 85%;
+  margin-top: -45px;
+  width: 40px;
 }
 
 .logo {
@@ -99,7 +99,7 @@ h2 {
   color: white;
   border-radius: 10px;
   padding: 5px;
-  text-align: center;  
+  text-align: center;
   width: 40%;
   margin-left: 30%;
   margin-bottom: 10px;
@@ -135,35 +135,31 @@ h2 {
   font-size: 1.5em;
   font-weight: 600;
 }
-
-.btn a {
-  color: #ffffff;  
-  text-decoration: none;
+.error {
+  background-color: #ff0000;
+  color: antiquewhite;
 }
-
 
 @media (min-width: 600px) {
-
-  header a img {      
-    margin-left: 90%;    
-}
-  .form-container {    
+  header a img {
+    margin-left: 90%;
+  }
+  .form-container {
     padding-bottom: 44px;
-}
+  }
 }
 
 @media (min-width: 1024px) {
-  
-header a img {    
-  margin-left: 95%; 
-}
+  header a img {
+    margin-left: 95%;
+  }
 
-h1 {
-margin: 8vh 0;
-}
+  h1 {
+    margin: 8vh 0;
+  }
 
-.form-container {
-width: 60%;
-padding-bottom: 46px;
-}
+  .form-container {
+    width: 60%;
+    padding-bottom: 46px;
+  }
 }

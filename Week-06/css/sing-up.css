@@ -119,63 +119,64 @@ label {
   font-size: 1.5em;
   font-weight: 600;
 }
+.error {
+  background-color: #ff0000;
+  color: antiquewhite;
+}
 
 @media (min-width: 600px) {
-  header a img {    
-    margin-left: 90%;    
+  header a img {
+    margin-left: 90%;
   }
 }
 
 @media (min-width: 1024px) {
-
   header a img {
-    margin-left: 95%;    
-  }  
+    margin-left: 95%;
+  }
 
-form {
-  margin-left: 10%;  
-}
-  
-.form-container {
-  background-color: rgb(142, 150, 156, 0.7);
-  width: 80%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 30px;
-}
+  form {
+    margin-left: 10%;
+  }
 
-.form-element {
-  display: flex;
-  justify-content: center;
-  width: 30vw;
-  margin-bottom: 20px;
-}
+  .form-container {
+    background-color: rgb(142, 150, 156, 0.7);
+    width: 80%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
 
-.form-element input {
-  width: 20vw;
-  height: 40px;
-}
+  .form-element {
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    margin-bottom: 20px;
+  }
 
-.form-element input.email {
-  width: 50vw;
-  
-}
+  .form-element input {
+    width: 20vw;
+    height: 40px;
+  }
 
-.form-element img {
-  width: 45px;
-  height: 45px;
-  margin-right: 15px;
-}
+  .form-element input.email {
+    width: 50vw;
+  }
 
-.name-lastname-container,
-.dni-bday-container, 
-.phone-adress-container,
-.place-post-container,
-.password-container {
-  display: flex;
-  flex-direction: row;
-}
+  .form-element img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+  }
 
+  .name-lastname-container,
+  .dni-bday-container,
+  .phone-adress-container,
+  .place-post-container,
+  .password-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
