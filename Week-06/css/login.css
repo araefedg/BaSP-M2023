@@ -77,11 +77,14 @@ h2 {
   padding-bottom: 30px;
 }
 
+.form-box {
+  margin-bottom: 25px;
+}
+
 .form-element {
   display: flex;
   justify-content: center;
-  width: 60vw;
-  margin-bottom: 20px;
+  width: 60vw;  
 }
 
 .form-element input {
@@ -138,6 +141,8 @@ h2 {
 .error {
   background-color: #ff0000;
   color: antiquewhite;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 600px) {
@@ -159,7 +164,7 @@ h2 {
   }
 
   .form-container {
-    width: 60%;
+    width: 80%;
     padding-bottom: 46px;
   }
 }

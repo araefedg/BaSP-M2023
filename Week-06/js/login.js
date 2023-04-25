@@ -8,11 +8,7 @@ function requiredValidator(emailInput, passwordInput) {
     return false;
   }
 }
-
-///////////////////////////////////////////////////////////////////////
-
 //VALIDAR EMAIL
-
 var emailError = document.getElementById("email-error");
 
 emailInput.addEventListener("blur", function () {
@@ -38,16 +34,15 @@ emailInput.addEventListener("focus", function () {
 
 //VALIDAR CONTRASEÑA
 
-// función para chequear que sean solo números o letras
 function validateCharCode(passwordValue) {
   for (var i = 0; i < passwordValue.length; i++) {
     var charCode = passwordValue.charCodeAt(i);
     if (
-      !(charCode > 47 && charCode < 58) && // numeric (0-9)
-      !(charCode > 64 && charCode < 91) && // upper alpha (A-Z)
-      !(charCode > 96 && charCode < 123) // lower alpha (a-z)
+      !(charCode > 47 && charCode < 58) && 
+      !(charCode > 64 && charCode < 91) && 
+      !(charCode > 96 && charCode < 123) 
     ) {
-      return false; // non-alphanumeric character found
+      return false; 
     }
   }
   return true;
