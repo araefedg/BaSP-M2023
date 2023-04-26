@@ -122,7 +122,7 @@ label {
 .error {
   background-color: #ff0000;
   color: antiquewhite;
-  width: 20.4vw;  
+  width: 61vw;  
 }
 
 
@@ -182,6 +182,12 @@ label {
   .password-container {
     display: flex;
     flex-direction: row;
+  }
+
+  .error {
+    background-color: #ff0000;
+    color: antiquewhite;
+    width: 20.4vw;  
   }
 
   #email-error {

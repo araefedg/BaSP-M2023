@@ -157,6 +157,17 @@ The goal is to solve, using the ES5 implementation, basic exercises on operators
 
 URL: <https://araefe1992.github.io/BaSP-M2023/Week-05/index.html>
 
+---
+
+## Week 6
+
+This week we started a new process, we changed teams and put into practice everything we learned in week 5.The work modality continues to be individual, although collaborating with the rest of the team in a fluid way.
+The weekly problem consisted in developing two additional screens of the landing page, the ones with forms, the login and the sing up.
+The login section contains two fields, email and password, we had to do the corresponding validations of each one and make the connections between HTML files. For the sing up section, validations had to be performed for the fields Name, Last name, Date of birth, Address, City, ID card, zip code, email, password and phone number. All validations were made in javascript.
+
+
+URL: <https://araefe1992.github.io/BaSP-M2023/Week-06/views/index.html>
+
 ## Authors
 
 - Araceli Fernández
