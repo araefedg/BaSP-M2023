@@ -44,7 +44,7 @@ document
     var emailValue = emailInput.value.trim();
     var passwordValue = passwordInput.value.trim();
 
-    if (validateInformation() == "") {
+    if (validateInformation() === "") {
       alert("email: " + emailValue + " " + "password: " + passwordValue);
     } else {
       alert(validateInformation());
@@ -52,35 +52,22 @@ document
 
     var url = `https://api-rest-server.vercel.app/login?email=${emailInput.value}&password=${passwordInput.value}`;
     fetch(url)
-    .then(function(response) {
-      if (response.ok) {
-        return response.json();        
-      } else {
-        throw new Error('There is an error trying to login');
-      }
-    })
-    .then(function(data) {
-      console.log(data);
-      return data;      
-    })
-    .catch(function(error) {
-      console.error(error);
-      alert('There is an error, try again');
-    });
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("There is an error trying to login");
+        }
+      })
+      .then(function (data) {
+        alert("Login success! Received data: " + JSON.stringify(data));
+        return data;
+      })
+      .catch(function (error) {
+        console.error(error);
+        alert("There is an error, try again");
+      });
   });
-
-  /*function fetchGet(url) {
-        return fetch(url)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (jsonData) {
-                return jsonData;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }*/
 
 //VALIDAR EMAIL
 
@@ -105,9 +92,8 @@ emailInput.addEventListener("blur", emailAlert);
 
 emailInput.addEventListener("focus", function () {
   emailInput.classList.remove("error");
-  emailError.textContent = "";  
-  });
-
+  emailError.textContent = "";
+});
 
 //VALIDAR PASSWORD
 
@@ -148,5 +134,3 @@ passwordInput.addEventListener("focus", function () {
   passwordInput.classList.remove("error");
   passwordError.textContent = "";
 });
-
-

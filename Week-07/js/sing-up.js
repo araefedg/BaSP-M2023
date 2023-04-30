@@ -9,9 +9,9 @@ var addressInput = document.getElementById("address");
 var locationInput = document.getElementById("location");
 var postCodeInput = document.getElementById("postCod");
 var emailInput = document.getElementById("email");
-var password1Input = document.getElementById("password1");
-var password2Input = document.getElementById("password2");
-
+var passwordInput = document.getElementById("password");
+var repeatPasswordInput = document.getElementById("repeatPassword");
+/*
 var nameInputValue = nameInput.value;
 var lastNameInputValue = lastNameInput.value;
 var dniInputValue = dniInput.value;
@@ -21,8 +21,8 @@ var addressInputValue = addressInput.value;
 var locationInputValue = locationInput.value;
 var postCodeInputValue = postCodeInput.value;
 var emailInputValue = emailInput.value;
-var password1InputValue = password1Input.value;
-var password2InputValue = password2Input.value;
+var passwordInputValue = passwordInput.value;
+var repeatPasswordInputValue = repeatPasswordInput.value;*/
 
 // ON CLICK
 
@@ -64,11 +64,10 @@ function dniErrorFunction() {
 
 function birthDatedErrorFunction() {
   var date = birthDateInput.value;
-  console.log(date);
   var birthDate = new Date(birthDateInput.value);
   var currentDate = new Date();
   if (birthDate) {
-    if (birthDate.getTime() >= currentDate.getTime() || date == "") {
+    if (birthDate.getTime() >= currentDate.getTime() || date === "") {
       return false;
     } else {
       return true;
@@ -137,6 +136,13 @@ function emailErrorFunction() {
   }
 }
 
+/*Como mejorar estaría bueno que los mensajes de error debajo de los inputs sean más específicos.
+Por ejemplo: si la contraseña está vació el mensaje debería ser “Password is required”.
+Si tiene menos de 8 characters, el mensaje podría ser “Password must be at least 8 characters”.
+Y si tiene que tener letras y numeros, “Password must contain letters and numbers”. Por ende,
+tenemos un mensaje de error para cada caso especifico de error. (Esta sugerencia lo llevaría a
+todos los inputs tanto del login como el sign up)*/
+
 var validateInformation = function () {
   var arrayErrors = [];
   if (!nameErrorFunction()) {
@@ -170,6 +176,20 @@ var validateInformation = function () {
   return arrayErrors;
 };
 
+function clearInputs() {
+  nameInput.value = "";
+  lastNameInput.value = "";
+  dniInput.value = "";
+  birthDateInput.value = "";
+  phoneInput.value = "";
+  addressInput.value = "";
+  locationInput.value = "";
+  postCodeInput.value = "";
+  emailInput.value = "";
+  passwordInput.value = "";
+  repeatPasswordInput.value = "";
+}
+
 document
   .getElementById("sing-up-button")
   .addEventListener("click", function (event) {
@@ -177,42 +197,65 @@ document
 
     if (validateInformation() == "") {
       alert(
-        "name: " +
-          nameInputValue +
+        "Name: " +
+          nameInput.value +
           " " +
-          "last name: " +
-          lastNameInputValue +
+          "\nLast Name: " +
+          lastNameInput.value +
           " " +
-          "DNI: " +
-          dniInputValue +
+          "\nDNI: " +
+          dniInput.value +
           " " +
-          "birth date: " +
-          birthDateInputValue +
+          "\nBirth Date: " +
+          birthDateInput.value +
           " " +
-          "phone: " +
-          phoneInputValue +
+          "\nPhone: " +
+          phoneInput.value +
           " " +
-          "address: " +
-          addressInputValue +
+          "\nAddress: " +
+          addressInput.value +
           " " +
-          "location: " +
-          locationInputValue +
+          "\nLocation: " +
+          locationInput.value +
           " " +
-          "post code: " +
-          postCodeInputValue +
+          "\nPost Code: " +
+          postCodeInput.value +
           " " +
-          "email: " +
-          emailInputValue +
+          "\nEmail: " +
+          emailInput.value +
           " " +
-          "password 1: " +
-          password1InputValue +
+          "\nPassword: " +
+          passwordInput.value +
           " " +
-          "password 2: " +
-          password2InputValue
+          "\nRepeat Password: " +
+          repeatPasswordInput.value
       );
+      clearInputs();
     } else {
       alert(validateInformation());
     }
+
+    var url = `https://api-rest-server.vercel.app/signup?name=${nameInput.value}&lastName=${lastNameInput.value}&dni=${dniInput.value}&birthDate=${birthDateInput.value}&phone=${phoneInput.value}&address=${addressInput.value}&location=${locationInput.value}&postCode=${postCodeInput.value}&email=${emailInput.value}&password=${passwordInput.value}&repeatPassword=${repeatPasswordInput.value}`;
+    fetch(url)
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("There is an error trying to Sing Up");
+        }
+      })
+      .then(function (data) {
+        alert("Login success! Received data: " + JSON.stringify(data));
+        localStorage.setItem("userData", JSON.stringify(data));
+        return data;
+      })
+      .catch(function (error) {
+        console.error(error);
+        alert("There is an error, try again");
+      });
+
+    var userData = localStorage.getItem("userData");
+    console.log(userData);
   });
 
 //VALIDAR NAME
@@ -240,9 +283,12 @@ nameInput.addEventListener("blur", function () {
 
   if (nameValue === "") {
   } else {
-    if (!validateCharCodeNameAndLastName(nameValue) || nameValue.length <= 3) {
+    if (nameValue.length <= 3) {
       nameInput.classList.add("error");
-      nameError.textContent = "Wrong name format.";
+      nameError.textContent = "Name must have more than 3 letters";
+    } else if (!validateCharCodeNameAndLastName(nameValue)){
+      nameInput.classList.add("error");
+      nameError.textContent = "Name must have only letters";
     } else {
       nameInput.classList.remove("error");
       nameError.textContent = "";
@@ -265,12 +311,12 @@ lastNameInput.addEventListener("blur", function () {
 
   if (lastNameValue === "") {
   } else {
-    if (
-      !validateCharCodeNameAndLastName(lastNameValue) ||
-      lastNameValue.length <= 3
-    ) {
+    if (lastNameValue.length <= 3) {
       lastNameInput.classList.add("error");
-      lastNameError.textContent = "Wrong last name format.";
+      lastNameError.textContent = "LastName must have more than 3 letters";
+    } else if (!validateCharCodeNameAndLastName(lastNameValue)) {
+      lastNameInput.classList.add("error");
+      lastNameError.textContent = "LastName must have only letters";
     } else {
       lastNameInput.classList.remove("error");
       lastNameError.textContent = "";
@@ -301,9 +347,12 @@ dniInput.addEventListener("blur", function () {
   dniValue = dniInput.value.trim();
   if (dniValue === "") {
   } else {
-    if (!validateCharCodeDNI(dniValue) || dniValue.length <= 7) {
+    if (dniValue.length <= 7) {
       dniInput.classList.add("error");
-      dniError.textContent = "Wrong DNI format.";
+      dniError.textContent = "DNI must have between 7 and 8 numbers";
+    } else if (!validateCharCodeDNI(dniValue)) {
+      dniInput.classList.add("error");
+      dniError.textContent = "DNI must have only numbers";
     } else {
       dniInput.classList.remove("error");
       dniError.textContent = "";
@@ -321,15 +370,18 @@ dniInput.addEventListener("focus", function () {
 
 var birthDateError = document.getElementById("birth-date-error");
 var date = birthDateInput.value;
+
 function valDate() {
-  if (!birthDateInput.value) {
-    return false;
-  }
   var birthDate = new Date(birthDateInput.value);
-  var currentDate = new Date();
-  if (birthDate.getTime() >= currentDate.getTime()) {
+  if (birthDateInput.value.trim() === '') {
     birthDateInput.classList.add("error");
-    birthDateError.textContent = "Wrong date format.";
+    birthDateError.textContent = "Date of birth is required";
+  } else if (isNaN(birthDate.getTime())) {
+    birthDateInput.classList.add("error");
+    birthDateError.textContent = "Date of birth must have format DD/MM/YYYY";
+  } else if (birthDate > new Date()) {
+    birthDateInput.classList.add("error");
+    birthDateError.textContent = "Date of birth cannot be in the future";
   } else {
     birthDateInput.classList.remove("error");
     birthDateError.textContent = "";
@@ -339,6 +391,7 @@ function valDate() {
 birthDateInput.addEventListener("change", function () {
   valDate(date);
 });
+
 
 //VALIDAR PHONE
 //Teléfono: Solo números y debe tener 10 números.
@@ -516,9 +569,9 @@ emailInput.addEventListener("focus", function () {
 //VALIDAR REPEAT PASSWORD
 //Repetir Contraseña: Al menos 8 caracteres, formados por letras y números.
 
-function validateCharCode(password1Value) {
-  for (var i = 0; i < password1Value.length; i++) {
-    var charCode = password1Value.charCodeAt(i);
+function validateCharCode(passwordValue) {
+  for (var i = 0; i < passwordValue.length; i++) {
+    var charCode = passwordValue.charCodeAt(i);
     if (
       !(charCode > 47 && charCode < 58) &&
       !(charCode > 64 && charCode < 91) &&
@@ -530,46 +583,46 @@ function validateCharCode(password1Value) {
   return true;
 }
 
-var password2Input = document.getElementById("password2");
-var password1Error = document.getElementById("password1-error");
-var password2Error = document.getElementById("password2-error");
+var repeatPasswordInput = document.getElementById("repeatPassword");
+var passwordError = document.getElementById("password-error");
+var repeatPasswordError = document.getElementById("repeatPassword-error");
 
 function validatePasswords() {
-  var password1Value = password1Input.value.trim();
-  var password2Value = password2Input.value.trim();
+  var passwordValue = passwordInput.value.trim();
+  var repeatPasswordValue = repeatPasswordInput.value.trim();
 
-  if (password1Value === "" || password2Value === "") {
+  if (passwordValue === "" || repeatPasswordValue === "") {
     return false;
   }
 
-  if (password1Value !== password2Value) {
-    password2Input.classList.add("error");
-    password2Error.textContent = "Not coincident password.";
+  if (passwordValue !== repeatPasswordValue) {
+    repeatPasswordInput.classList.add("error");
+    repeatPasswordError.textContent = "Not coincident password.";
     return false;
   }
 
-  if (password1Value.length < 8 || !validateCharCode(password1Value)) {
-    password1Input.classList.add("error");
-    password1Error.textContent = "Wrong password format.";
+  if (password1Value.length < 8 || !validateCharCode(passwordValue)) {
+    passwordInput.classList.add("error");
+    passwordError.textContent = "Wrong password format.";
     return false;
   }
 
-  password1Input.classList.remove("error");
-  password1Error.textContent = "";
-  password2Input.classList.remove("error");
-  password2Error.textContent = "";
+  passwordInput.classList.remove("error");
+  passwordError.textContent = "";
+  repeatPasswordInput.classList.remove("error");
+  repeatPasswordError.textContent = "";
   return true;
 }
 
-password1Input.addEventListener("blur", validatePasswords);
-password2Input.addEventListener("blur", validatePasswords);
+passwordInput.addEventListener("blur", validatePasswords);
+repeatPasswordInput.addEventListener("blur", validatePasswords);
 
-password1Input.addEventListener("focus", function () {
-  password1Input.classList.remove("error");
-  password1Error.textContent = "";
+passwordInput.addEventListener("focus", function () {
+  passwordInput.classList.remove("error");
+  passwordError.textContent = "";
 });
 
-password2Input.addEventListener("focus", function () {
-  password2Input.classList.remove("error");
-  password2Error.textContent = "";
+repeatPasswordInput.addEventListener("focus", function () {
+  repeatPasswordInput.classList.remove("error");
+  repeatPasswordError.textContent = "";
 });
