@@ -1,17 +1,18 @@
 //TODOS LOS CAMPOS REQUERIDOS
-
+var divErrors = document.getElementsByClassName("error");
 var nameInput = document.getElementById("name");
 var lastNameInput = document.getElementById("lastName");
 var dniInput = document.getElementById("dni");
-var birthDateInput = document.getElementById("birthDate");
+var birthDateInput = document.getElementById("dob");
 var phoneInput = document.getElementById("phone");
 var addressInput = document.getElementById("address");
-var locationInput = document.getElementById("location");
-var postCodeInput = document.getElementById("postCod");
+var locationInput = document.getElementById("city");
+var postCodeInput = document.getElementById("zip");
 var emailInput = document.getElementById("email");
 var passwordInput = document.getElementById("password");
 var repeatPasswordInput = document.getElementById("repeatPassword");
-/*
+var inputs = document.getElementsByTagName("input");
+
 var nameInputValue = nameInput.value;
 var lastNameInputValue = lastNameInput.value;
 var dniInputValue = dniInput.value;
@@ -22,7 +23,8 @@ var locationInputValue = locationInput.value;
 var postCodeInputValue = postCodeInput.value;
 var emailInputValue = emailInput.value;
 var passwordInputValue = passwordInput.value;
-var repeatPasswordInputValue = repeatPasswordInput.value;*/
+var repeatPasswordInputValue = repeatPasswordInput.value;
+
 
 // ON CLICK
 
@@ -197,7 +199,7 @@ document
 
     if (validateInformation() == "") {
       alert(
-        "Name: " +
+        "name: " +
           nameInput.value +
           " " +
           "\nLast Name: " +
@@ -230,32 +232,42 @@ document
           "\nRepeat Password: " +
           repeatPasswordInput.value
       );
-      clearInputs();
     } else {
       alert(validateInformation());
     }
 
-    var url = `https://api-rest-server.vercel.app/signup?name=${nameInput.value}&lastName=${lastNameInput.value}&dni=${dniInput.value}&birthDate=${birthDateInput.value}&phone=${phoneInput.value}&address=${addressInput.value}&location=${locationInput.value}&postCode=${postCodeInput.value}&email=${emailInput.value}&password=${passwordInput.value}&repeatPassword=${repeatPasswordInput.value}`;
+      var date = birthDateInput.value;
+      var dateEl = date.split('-');
+      var formattedDate = dateEl[1] + '/' + dateEl[2] + '/' + dateEl[0];
+
+    var error = false;
+    for (var i = 0; i < divErrors.length; i++) {
+      console.log(divErrors[i].textContent);
+      if (!(divErrors[i].textContent === "")) {
+        error = true;
+      }
+    }
+    console.log(error);
+    if (!error) {
+    var url = `https://api-rest-server.vercel.app/signup?name=${nameInput.value}&lastName=${lastNameInput.value}&dni=${dniInput.value}&dob=${formattedDate}&phone=${phoneInput.value}&address=${addressInput.value}&city=${locationInput.value}&zip=${postCodeInput.value}&email=${emailInput.value}&password=${passwordInput.value}&repeatPassword=${repeatPasswordInput.value}`;
+
     fetch(url)
       .then(function (response) {
-        if (response.ok) {
           return response.json();
-        } else {
-          throw new Error("There is an error trying to Sing Up");
-        }
-      })
+        })
       .then(function (data) {
-        alert("Login success! Received data: " + JSON.stringify(data));
+        console.log(data);
+        alert("sing up success! Received data: " + JSON.stringify(data));
         localStorage.setItem("userData", JSON.stringify(data));
+        var userData = localStorage.getItem("userData");
         return data;
       })
       .catch(function (error) {
         console.error(error);
         alert("There is an error, try again");
       });
-
-    var userData = localStorage.getItem("userData");
-    console.log(userData);
+    }
+    clearInputs();
   });
 
 //VALIDAR NAME
@@ -286,7 +298,7 @@ nameInput.addEventListener("blur", function () {
     if (nameValue.length <= 3) {
       nameInput.classList.add("error");
       nameError.textContent = "Name must have more than 3 letters";
-    } else if (!validateCharCodeNameAndLastName(nameValue)){
+    } else if (!validateCharCodeNameAndLastName(nameValue)) {
       nameInput.classList.add("error");
       nameError.textContent = "Name must have only letters";
     } else {
@@ -373,7 +385,7 @@ var date = birthDateInput.value;
 
 function valDate() {
   var birthDate = new Date(birthDateInput.value);
-  if (birthDateInput.value.trim() === '') {
+  if (birthDateInput.value.trim() === "") {
     birthDateInput.classList.add("error");
     birthDateError.textContent = "Date of birth is required";
   } else if (isNaN(birthDate.getTime())) {
@@ -388,10 +400,11 @@ function valDate() {
   }
 }
 
+
+
 birthDateInput.addEventListener("change", function () {
   valDate(date);
 });
-
 
 //VALIDAR PHONE
 //Teléfono: Solo números y debe tener 10 números.
@@ -411,9 +424,12 @@ phoneInput.addEventListener("blur", function () {
   phoneValue = phoneInput.value.trim();
   if (phoneValue === "") {
   } else {
-    if (!validateCharCodePhone(phoneValue) || phoneValue.length !== 10) {
+    if (!validateCharCodePhone(phoneValue)) {
       phoneInput.classList.add("error");
-      phoneError.textContent = "Wrong phone format.";
+      phoneError.textContent = "Phone must have only numbers";
+    } else if (phoneValue.length !== 10) {
+      phoneInput.classList.add("error");
+      phoneError.textContent = "Phone must have 10 numbers";
     } else {
       phoneInput.classList.remove("error");
       phoneError.textContent = "";
@@ -430,17 +446,17 @@ phoneInput.addEventListener("focus", function () {
 //Dirección: Al menos 5 caracteres con letras, números y un espacio en el medio.
 
 function addressOk(stringsList) {
-  if (stringsList.length > 2 || stringsList.length === 1) {
+  if (stringsList.length > 2 || stringsList[0].length < 3) {
     return false;
   } else {
     if (
-      stringsList[0].length >= 5 &&
+      stringsList[0].length >= 3 &&
       validateCharCode(stringsList[0]) &&
       validateCharCode(stringsList[1])
     ) {
-      true;
+      return true;
     } else {
-      false;
+      return false;
     }
   }
 }
@@ -450,9 +466,13 @@ addressInput.addEventListener("blur", function () {
   var addressValue = addressInput.value.trim();
   var stringsList = addressValue.split(" ");
 
-  if (addressOk(stringsList) === false) {
+  if (!addressOk(stringsList)) {
+    if (!addressValue.includes(" ")) {
+      addressError.textContent = "Address must have a space in the middle";
+    } else {
+      addressError.textContent = "Address must have more than 3 letters";
+    }
     addressInput.classList.add("error");
-    addressError.textContent = "Wrong address format.";
   } else {
     addressInput.classList.remove("error");
     addressError.textContent = "";
@@ -601,7 +621,7 @@ function validatePasswords() {
     return false;
   }
 
-  if (password1Value.length < 8 || !validateCharCode(passwordValue)) {
+  if (passwordValue.length < 8 || !validateCharCode(passwordValue)) {
     passwordInput.classList.add("error");
     passwordError.textContent = "Wrong password format.";
     return false;

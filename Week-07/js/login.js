@@ -51,17 +51,19 @@ document
     }
 
     var url = `https://api-rest-server.vercel.app/login?email=${emailInput.value}&password=${passwordInput.value}`;
+
     fetch(url)
       .then(function (response) {
-        if (response.ok) {
           return response.json();
-        } else {
-          throw new Error("There is an error trying to login");
-        }
       })
       .then(function (data) {
-        alert("Login success! Received data: " + JSON.stringify(data));
+        if (data.success) {
+          alert("Login success! Received data: " + JSON.stringify(data));
         return data;
+        } else {
+          alert("Login failed! Received data: " + JSON.stringify(data));
+        return data;
+        }
       })
       .catch(function (error) {
         console.error(error);
