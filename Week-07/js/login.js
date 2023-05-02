@@ -54,10 +54,6 @@ document
 
     fetch(url)
       .then(function (res) {
-        // if (!res.ok) throw new Error(res);
-        return res;
-      })
-      .then(function (res) {
         return res.json();
       })
       .then(function (data) {
@@ -155,7 +151,7 @@ function passwordAlert() {
 
   if (passwordValue === "") {
   } else {
-    if (validateInformationPassword() === "") {
+    if (validateInformationPassword() == "") {
     } else if (validateInformationPassword() !== "") {
       passwordInput.classList.add("error");
       passwordError.textContent = validateInformationPassword();

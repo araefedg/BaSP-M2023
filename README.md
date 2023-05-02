@@ -168,6 +168,12 @@ The login section contains two fields, email and password, we had to do the corr
 
 URL: <https://araefe1992.github.io/BaSP-M2023/Week-06/views/index.html>
 
+## Week 7
+
+We continued working on the project and focused on connecting to the backend using an API. We had to use our sing-up registration form that sent data to the backend, received a response and stored the information in Local Storage. We used Fetch and Promises to make HTTP requests and handle errors.
+
+URL: <https://araefe1992.github.io/BaSP-M2023/Week-07/views/index.html>
+
 ## Authors
 
 - Araceli Fernández
