@@ -1,4 +1,20 @@
 //TODOS LOS CAMPOS REQUERIDOS
+
+window.onload = function () {
+  var localStorageData = JSON.parse(localStorage.getItem("userData"));
+  document.getElementById("name").value = localStorageData.data.name;
+  document.getElementById("lastName").value = localStorageData.data.lastName;
+  document.getElementById("dni").value = localStorageData.data.dni;
+  document.getElementById("dob").value = localStorageData.data.dob;
+  document.getElementById("phone").value = localStorageData.data.phone;
+  document.getElementById("address").value = localStorageData.data.address;
+  document.getElementById("city").value = localStorageData.data.city;
+  document.getElementById("zip").value = localStorageData.data.zip;
+  document.getElementById("email").value = localStorageData.data.email;
+  document.getElementById("password").value = localStorageData.data.password;
+  document.getElementById("repeatPassword").value =
+    localStorageData.data.repeatPassword;
+};
 var divErrors = document.getElementsByClassName("error");
 var nameInput = document.getElementById("name");
 var lastNameInput = document.getElementById("lastName");
@@ -11,7 +27,6 @@ var postCodeInput = document.getElementById("zip");
 var emailInput = document.getElementById("email");
 var passwordInput = document.getElementById("password");
 var repeatPasswordInput = document.getElementById("repeatPassword");
-var inputs = document.getElementsByTagName("input");
 
 var nameInputValue = nameInput.value;
 var lastNameInputValue = lastNameInput.value;
@@ -25,9 +40,7 @@ var emailInputValue = emailInput.value;
 var passwordInputValue = passwordInput.value;
 var repeatPasswordInputValue = repeatPasswordInput.value;
 
-
 // ON CLICK
-
 function nameErrorFunction() {
   nameValue = nameInput.value.trim();
   if (nameValue) {
@@ -138,13 +151,6 @@ function emailErrorFunction() {
   }
 }
 
-/*Como mejorar estaría bueno que los mensajes de error debajo de los inputs sean más específicos.
-Por ejemplo: si la contraseña está vació el mensaje debería ser “Password is required”.
-Si tiene menos de 8 characters, el mensaje podría ser “Password must be at least 8 characters”.
-Y si tiene que tener letras y numeros, “Password must contain letters and numbers”. Por ende,
-tenemos un mensaje de error para cada caso especifico de error. (Esta sugerencia lo llevaría a
-todos los inputs tanto del login como el sign up)*/
-
 var validateInformation = function () {
   var arrayErrors = [];
   if (!nameErrorFunction()) {
@@ -177,20 +183,6 @@ var validateInformation = function () {
 
   return arrayErrors;
 };
-
-function clearInputs() {
-  nameInput.value = "";
-  lastNameInput.value = "";
-  dniInput.value = "";
-  birthDateInput.value = "";
-  phoneInput.value = "";
-  addressInput.value = "";
-  locationInput.value = "";
-  postCodeInput.value = "";
-  emailInput.value = "";
-  passwordInput.value = "";
-  repeatPasswordInput.value = "";
-}
 
 document
   .getElementById("sing-up-button")
@@ -236,43 +228,41 @@ document
       alert(validateInformation());
     }
 
-      var date = birthDateInput.value;
-      var dateEl = date.split('-');
-      var formattedDate = dateEl[1] + '/' + dateEl[2] + '/' + dateEl[0];
+    var date = birthDateInput.value;
+    var dateEl = date.split("-");
+    var formattedDate = dateEl[1] + "/" + dateEl[2] + "/" + dateEl[0];
 
     var error = false;
     for (var i = 0; i < divErrors.length; i++) {
-      console.log(divErrors[i].textContent);
       if (!(divErrors[i].textContent === "")) {
         error = true;
       }
     }
-    console.log(error);
-    if (!error) {
-    var url = `https://api-rest-server.vercel.app/signup?name=${nameInput.value}&lastName=${lastNameInput.value}&dni=${dniInput.value}&dob=${formattedDate}&phone=${phoneInput.value}&address=${addressInput.value}&city=${locationInput.value}&zip=${postCodeInput.value}&email=${emailInput.value}&password=${passwordInput.value}&repeatPassword=${repeatPasswordInput.value}`;
 
-    fetch(url)
-      .then(function (response) {
+    if (!error) {
+      var url = `https://api-rest-server.vercel.app/signup?name=${nameInput.value}&lastName=${lastNameInput.value}&dni=${dniInput.value}&dob=${formattedDate}&phone=${phoneInput.value}&address=${addressInput.value}&city=${locationInput.value}&zip=${postCodeInput.value}&email=${emailInput.value}&password=${passwordInput.value}&repeatPassword=${repeatPasswordInput.value}`;
+      fetch(url)
+        .then(function (response) {
           return response.json();
         })
-      .then(function (data) {
-        console.log(data);
-        alert("sing up success! Received data: " + JSON.stringify(data));
-        localStorage.setItem("userData", JSON.stringify(data));
-        var userData = localStorage.getItem("userData");
-        return data;
-      })
-      .catch(function (error) {
-        console.error(error);
-        alert("There is an error, try again");
-      });
+        .then(function (data) {
+          alert("sing up success! Received data: " + JSON.stringify(data));
+          localStorage.setItem("userData", JSON.stringify(data));
+          var userData = localStorage.getItem("userData");
+          if (userData) {
+            var userObj = JSON.parse(userData);
+          }
+          return data;
+        })
+        .catch(function (error) {
+          console.error(error);
+          alert("There is an error, try again");
+        });
     }
-    clearInputs();
   });
 
 //VALIDAR NAME
 //Nombre: Solo letras y debe tener más de 3 letras.
-
 var nameError = document.getElementById("name-error");
 
 function validateCharCodeNameAndLastName(nameValue) {
@@ -315,7 +305,6 @@ nameInput.addEventListener("focus", function () {
 
 //VALIDAR LAST NAME
 //Apellido: Solo letras y debe tener más de 3 letras.
-
 var lastNameError = document.getElementById("last-name-error");
 
 lastNameInput.addEventListener("blur", function () {
@@ -343,7 +332,6 @@ lastNameInput.addEventListener("focus", function () {
 
 //VALIDAR DNI
 //DNI: Solo números y debe tener más de 7 números.
-
 var dniError = document.getElementById("dni-error");
 function validateCharCodeDNI(dniValue) {
   for (var i = 0; i < dniValue.length; i++) {
@@ -379,7 +367,6 @@ dniInput.addEventListener("focus", function () {
 
 //VALIDAR BIRTH DATE
 //Fecha de Nacimiento: Con formato dd/mm/aaaa.
-
 var birthDateError = document.getElementById("birth-date-error");
 var date = birthDateInput.value;
 
@@ -400,15 +387,12 @@ function valDate() {
   }
 }
 
-
-
 birthDateInput.addEventListener("change", function () {
   valDate(date);
 });
 
 //VALIDAR PHONE
 //Teléfono: Solo números y debe tener 10 números.
-
 var phoneError = document.getElementById("phone-error");
 function validateCharCodePhone(phoneValue) {
   for (var i = 0; i < phoneValue.length; i++) {
@@ -444,7 +428,6 @@ phoneInput.addEventListener("focus", function () {
 
 //VALIDAR ADRRESS
 //Dirección: Al menos 5 caracteres con letras, números y un espacio en el medio.
-
 function addressOk(stringsList) {
   if (stringsList.length > 2 || stringsList[0].length < 3) {
     return false;
@@ -486,7 +469,6 @@ addressInput.addEventListener("focus", function () {
 
 //VALIDAR LOCATION
 //Localidad: Texto alfanumérico y debe tener más de 3 letras.
-
 var locationError = document.getElementById("location-error");
 function validateCharCodeLocation(locationValue) {
   for (var i = 0; i < locationValue.length; i++) {
@@ -505,9 +487,12 @@ locationInput.addEventListener("blur", function () {
   locationValue = locationInput.value.trim();
   if (locationValue === "") {
   } else {
-    if (!validateCharCode(locationValue) || locationValue.length < 3) {
+    if (locationValue.length < 3) {
       locationInput.classList.add("error");
-      locationError.textContent = "Wrong location format.";
+      locationError.textContent = "Must have at least 3 letters";
+    } else if (!validateCharCode(locationValue)) {
+      locationInput.classList.add("error");
+      locationError.textContent = "Must contain numbers and letters";
     } else {
       locationInput.classList.remove("error");
       locationError.textContent = "";
@@ -522,7 +507,6 @@ postCodeInput.addEventListener("focus", function () {
 
 //VALIDAR POST CODE
 //Código Postal: Solo números y debe tener entre 4 y 5 números.
-
 var postCodeError = document.getElementById("post-code-error");
 function validateCharCodePostCode(postCodeValue) {
   for (var i = 0; i < postCodeValue.length; i++) {
@@ -539,13 +523,12 @@ postCodeInput.addEventListener("blur", function () {
 
   if (postCodeValue === "") {
   } else {
-    if (
-      !validateCharCodePostCode(postCodeValue) ||
-      postCodeValue.length < 4 ||
-      postCodeValue.length > 5
-    ) {
+    if (!validateCharCodePostCode(postCodeValue)) {
       postCodeInput.classList.add("error");
-      postCodeError.textContent = "Wrong post code format.";
+      postCodeError.textContent = "Must be only numbers";
+    } else if (postCodeValue.length < 4 || postCodeValue.length > 5) {
+      postCodeInput.classList.add("error");
+      postCodeError.textContent = "Must be 4 or 5 numbers";
     } else {
       postCodeInput.classList.remove("error");
       postCodeError.textContent = "";
@@ -560,7 +543,6 @@ postCodeInput.addEventListener("focus", function () {
 
 //VALIDAR EMAIL
 //Email: Debe tener un formato de email válido.
-
 var emailError = document.getElementById("email-error");
 emailInput.addEventListener("blur", function () {
   var emailValue = emailInput.value.trim();
@@ -569,7 +551,7 @@ emailInput.addEventListener("blur", function () {
   } else {
     if (!emailRegex.test(emailValue)) {
       emailInput.classList.add("error");
-      emailError.textContent = "Wrong email format.";
+      emailError.textContent = "Wrong format, try example@email.com";
     } else {
       emailInput.classList.remove("error");
       emailError.textContent = "";
@@ -588,7 +570,6 @@ emailInput.addEventListener("focus", function () {
 
 //VALIDAR REPEAT PASSWORD
 //Repetir Contraseña: Al menos 8 caracteres, formados por letras y números.
-
 function validateCharCode(passwordValue) {
   for (var i = 0; i < passwordValue.length; i++) {
     var charCode = passwordValue.charCodeAt(i);
@@ -603,7 +584,6 @@ function validateCharCode(passwordValue) {
   return true;
 }
 
-var repeatPasswordInput = document.getElementById("repeatPassword");
 var passwordError = document.getElementById("password-error");
 var repeatPasswordError = document.getElementById("repeatPassword-error");
 
@@ -612,18 +592,21 @@ function validatePasswords() {
   var repeatPasswordValue = repeatPasswordInput.value.trim();
 
   if (passwordValue === "" || repeatPasswordValue === "") {
-    return false;
+  }
+
+  if (passwordValue.length < 8) {
+    passwordInput.classList.add("error");
+    passwordError.textContent = "Must be at least 8 characters long";
+    // return false;
+  } else if (!validateCharCode(passwordValue)) {
+    passwordInput.classList.add("error");
+    passwordError.textContent = "Must have letters and numbers only";
+    // return false;
   }
 
   if (passwordValue !== repeatPasswordValue) {
     repeatPasswordInput.classList.add("error");
     repeatPasswordError.textContent = "Not coincident password.";
-    return false;
-  }
-
-  if (passwordValue.length < 8 || !validateCharCode(passwordValue)) {
-    passwordInput.classList.add("error");
-    passwordError.textContent = "Wrong password format.";
     return false;
   }
 

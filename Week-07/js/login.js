@@ -44,8 +44,8 @@ document
     var emailValue = emailInput.value.trim();
     var passwordValue = passwordInput.value.trim();
 
-    if (validateInformation() === "") {
-      alert("email: " + emailValue + " " + "password: " + passwordValue);
+    if (validateInformation() == "") {
+      alert("email: " + emailValue + " " + "\npassword: " + passwordValue);
     } else {
       alert(validateInformation());
     }
@@ -53,26 +53,29 @@ document
     var url = `https://api-rest-server.vercel.app/login?email=${emailInput.value}&password=${passwordInput.value}`;
 
     fetch(url)
-      .then(function (response) {
-          return response.json();
+      .then(function (res) {
+        // if (!res.ok) throw new Error(res);
+        return res;
+      })
+      .then(function (res) {
+        return res.json();
       })
       .then(function (data) {
         if (data.success) {
           alert("Login success! Received data: " + JSON.stringify(data));
-        return data;
+          return data;
         } else {
           alert("Login failed! Received data: " + JSON.stringify(data));
-        return data;
+          return data;
         }
       })
-      .catch(function (error) {
-        console.error(error);
-        alert("There is an error, try again");
+      .catch(function (res) {
+        console.error(res);
+        alert("There is an error, try again: " + JSON.stringify(res));
       });
   });
 
 //VALIDAR EMAIL
-
 var emailError = document.getElementById("email-error");
 
 function emailAlert() {
@@ -82,7 +85,7 @@ function emailAlert() {
   } else {
     if (!emailRegex.test(emailValue)) {
       emailInput.classList.add("error");
-      emailError.textContent = "Wrong email format.";
+      emailError.textContent = "Wrong format, try example@email.com";
     } else {
       emailInput.classList.remove("error");
       emailError.textContent = "";
@@ -98,7 +101,6 @@ emailInput.addEventListener("focus", function () {
 });
 
 //VALIDAR PASSWORD
-
 function validateCharCode(passwordValue) {
   for (var i = 0; i < passwordValue.length; i++) {
     var charCode = passwordValue.charCodeAt(i);
@@ -115,14 +117,48 @@ function validateCharCode(passwordValue) {
 
 var passwordError = document.getElementById("password-error");
 
+function passwordErrorFunctionLength() {
+  var passwordValue = passwordInput.value.trim();
+  if (passwordValue) {
+    if (passwordValue.length < 8) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+function passwordErrorFunctionValidateChar() {
+  var passwordValue = passwordInput.value.trim();
+  if (passwordValue) {
+    if (validateCharCode(passwordValue)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+var validateInformationPassword = function () {
+  var arrayErrors = [];
+  if (!passwordErrorFunctionLength()) {
+    arrayErrors.push("Must be at least 8 characters long");
+  }
+  if (passwordErrorFunctionValidateChar()) {
+    arrayErrors.push("\nMust have letters and numbers only");
+  }
+  return arrayErrors;
+};
+
 function passwordAlert() {
   var passwordValue = passwordInput.value.trim();
 
   if (passwordValue === "") {
   } else {
-    if (passwordValue.length < 8 || !validateCharCode(passwordValue)) {
+    if (validateInformationPassword() === "") {
+    } else if (validateInformationPassword() !== "") {
       passwordInput.classList.add("error");
-      passwordError.textContent = "Wrong password format.";
+      passwordError.textContent = validateInformationPassword();
     } else {
       passwordInput.classList.remove("error");
       passwordError.textContent = "";
