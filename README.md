@@ -145,7 +145,7 @@ To do so, we incorporated new CSS components, where we applied css to different 
 
 From here you can access the finished project:
 
-URL: <https://araefe1992.github.io/BaSP-M2023/Week-04/index.html>
+URL: <https://araefedg.github.io/BaSP-M2023/Week-04/index.html>
 
 ---
 
@@ -155,7 +155,7 @@ The challenge this week is to introduce us to Javascript, to understand what is 
 The goal is to solve, using the ES5 implementation, basic exercises on operators and variables in JavaScript, strings, arrays and for cycles, as well as to see functions.
 
 
-URL: <https://araefe1992.github.io/BaSP-M2023/Week-05/index.html>
+URL: <https://araefedg.github.io/BaSP-M2023/Week-05/index.html>
 
 ---
 
@@ -166,13 +166,13 @@ The weekly problem consisted in developing two additional screens of the landing
 The login section contains two fields, email and password, we had to do the corresponding validations of each one and make the connections between HTML files. For the sing up section, validations had to be performed for the fields Name, Last name, Date of birth, Address, City, ID card, zip code, email, password and phone number. All validations were made in javascript.
 
 
-URL: <https://araefe1992.github.io/BaSP-M2023/Week-06/views/index.html>
+URL: <https://araefedg.github.io/BaSP-M2023/Week-06/views/index.html>
 
 ## Week 7
 
 We continued working on the project and focused on connecting to the backend using an API. We had to use our sing-up registration form that sent data to the backend, received a response and stored the information in Local Storage. We used Fetch and Promises to make HTTP requests and handle errors.
 
-URL: <https://araefe1992.github.io/BaSP-M2023/Week-07/views/index.html>
+URL: <https://araefedg.github.io/BaSP-M2023/Week-07/views/index.html>
 
 ## Authors
 
